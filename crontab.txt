@@ -1,0 +1,2 @@
+@hourly cd /home/user/scraper && /usr/bin/python /home/user/scraper/scraper.py >> /home/user/scraper_stdout.log 2>&1
+0 1 * * * cd /home/user/phox_pipeline && /usr/bin/python /home/user/phox_pipeline/phox_pipeline.py >> /home/user/pipeline_stdout.log 2>&1
