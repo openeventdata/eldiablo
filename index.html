@@ -1,0 +1,150 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Eldiablo by openeventdata</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Eldiablo</h1>
+        <p>Event data in a box, basically.</p>
+
+        <p class="view"><a href="https://github.com/openeventdata/eldiablo">View the Project on GitHub <small>openeventdata/eldiablo</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/openeventdata/eldiablo/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/openeventdata/eldiablo/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/openeventdata/eldiablo">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>
+<a name="eldiablo" class="anchor" href="#eldiablo"><span class="octicon octicon-link"></span></a>EL:DIABLO</h1>
+
+<p>Event data in a box, basically.</p>
+
+<h2>
+<a name="about" class="anchor" href="#about"><span class="octicon octicon-link"></span></a>About</h2>
+
+<p>The main goal of EL:DIABLO is to overcome <a href="https://en.wikipedia.org/wiki/Dependency_hell">dependency hell</a>
+and make it much easier for the end user to get up and running with event data
+coding. Using software designed for development operations allows us to easily
+share the setup we use to develop the tools and software for creating and
+working with event data. In short, no matter what hardware or operating system
+a user chooses, it is possible to replicate our exact event-data coding
+platform on that specific configuration. This goal is important to us for two
+primary reasons. First, we are striving to make the generation of event data
+more open than it has historically been. Things such as copyright and licensing
+agreements make it difficult to share source texts for coded event data, but we
+<strong>can</strong> make the <strong>process</strong> as transparent as possible. This is especially
+important since there are a multitude of seemingly minor choices that go into
+event data coding that can have a significant impact on the final product. The
+second reason we are pursuing EL:DIABLO as a project is to enable
+collaboration. It will no longer be unclear what steps are taken to generate
+event data, or what the various moving pieces within the system are. If someone
+wishes, for example, to develop a new event coder, they can simply drop that in
+to the existing pipeline. The same holds for the various dictionaries,
+geocoders, web scrapers, etc. It's like Legos. But for event data.</p>
+
+<h2>
+<a name="components" class="anchor" href="#components"><span class="octicon octicon-link"></span></a>Components</h2>
+
+<p>On the technical side of things, EL:DIABLO provides the information and scripts
+necessary to set up a <a href="https://en.wikipedia.org/wiki/Virtual_machine">virtual machine</a>
+on a user's computer. For those not familiar, this can be thought of as a
+computer within a computer. EL:DIABLO relies on <a href="https://www.vagrantup.com/">Vagrant</a>,
+and by extension <a href="https://www.virtualbox.org/">VirtualBox</a>, to set up this
+virtual environment. These two pieces of software allow for the easy setup and
+use of a virtual machine. Thus, two of the files contained within EL:DIABLO are
+a <code>Vagrantfile</code>, which gives intructions to Vagrant on how to setup the virtual
+machine, and <code>bootstrap.sh</code>, which is a <a href="https://en.wikipedia.org/wiki/Shell_script">shell script</a>
+that installs the necessary software within the virtual machine.</p>
+
+<p>The EL:DIABLO event coding platform is comprised of two primary applications:
+a web scraper and a processing pipeline (<a href="https://github.com/openeventdata/scraper"><code>scraper</code></a> and
+<a href="https://github.com/openeventdata/phoenix_pipeline"><code>phoenix_pipeline</code></a> specificaly). The scraper is a simple web scraper that
+makes use of a whitelist of RSS feeds to pull stories from popular news
+outlets. The pipeline moves the news stories from storage in a database to the
+event coder, such as TABARI or PETRARCH, and outputs event data. More
+information about the details of these projects can be found in their
+respective documentation, linked to above. If you use the standard
+<code>bootstrap.sh</code> script provided with EL:DIABLO, the web scraper will run once an
+hour, and the pipeline will run once a day at 01:00.</p>
+
+<h2>
+<a name="setting-up" class="anchor" href="#setting-up"><span class="octicon octicon-link"></span></a>Setting up</h2>
+
+<p>As mentioned above, EL:DIABLO relies on Vagrant and VirtualBox for most of the
+heavy lifting. This means that the only things that
+a user needs to install on their local machine are these two pieces of
+software. The creators of this software describe the install process better
+than we can, so a user should look <a href="https://www.vagrantup.com/downloads.html">here</a>
+for Vagrant and <a href="https://www.virtualbox.org/wiki/Downloads">here</a>
+for VirtualBox. Once that software is installed, EL:DIABLO needs to be
+downloaded from the <a href="https://github.com/openeventdata/eldiablo">Github repository</a>.
+For those familiar with <code>git</code>, a <code>git clone</code> should work fine. For those
+unfamiliar with <code>git</code>, it is possible to download the repository as a zip file
+as shown in the picture below.</p>
+
+<p><a href="http://i.imgur.com/YTT6Ppy.png" title="Github example"><img src="http://i.imgur.com/YTT6Ppy.png" alt="Github" title="Github example"></a></p>
+
+<p>Once this file is downloaded and unzipped, you should use the command line to cd into the
+directory and do <code>vagrant up</code>. This will take awhile to download the operating system image
+(this will only be done once) and then install the relevant software within the virtual
+machine. Then <code>vagrant ssh</code> to get into the box. You're now in the virtual machine. Overall,
+this should look something like:</p>
+
+<p><a href="http://i.imgur.com/UJtjy3N.png" title="Terminal example"><img src="http://i.imgur.com/UJtjy3N.png" alt="Shell" title="Terminal example"></a></p>
+
+<p><a href="http://i.imgur.com/206UtDs.png" title="Second terminal example"><img src="http://i.imgur.com/206UtDs.png" alt="Shell" title="Second terminal example"></a></p>
+
+<p>As a note, all of this will create a folder somewhere on your local machine
+that contains the operating system images. On OSX it's in the home directory and
+named <code>VirtualBox VMs</code>. </p>
+
+<p>To get out of the virtual machine, type <code>exit</code>, which will bring you back to your local machine.
+There are three methods for ending the Vagrant box: <code>vagrant suspend</code>, <code>vagrant halt</code>, and
+<code>vagrant destroy</code>. The main difference between these three is the amount of
+system resources used while in the "down" state. If you are completely done
+with the virtual machine, and do not wish to keep any of the data, make use of
+<code>vagrant destory</code>. Again, this <em>will remove</em> all of the data within the virtual
+machine and all software will have to be reinstalled. If you wish to just
+temporarily bring down the virtual machine, the other two commands should be
+explored in the <a href="https://docs.vagrantup.com/v2/getting-started/teardown.html">Vagrant documentation</a>.</p>
+
+<h2>
+<a name="other-information" class="anchor" href="#other-information"><span class="octicon octicon-link"></span></a>Other Information</h2>
+
+<p>Due to the way Vagrant sets up the virtual machine, it is necessary to prepend nearly
+every command with <code>sudo</code>.</p>
+
+<p>The <code>bootstrap.sh</code> script is specifically configured for use with the Vagrant
+box, but with slight modifications can be used on any Linux box (it's what we
+use to boostrap our machines). This means that the script can serve as the
+basis for setting up a high-performance computer running EL:DIABLO, an
+individual's laptop, etc. </p>
+
+<p>For the two Github repositories, <code>scraper</code> and <code>phoenix_pipeline</code>, each time
+<code>vagrant up</code> is run the most recent version of the code is pulled from Github.
+If you have a long-running virtual machine and wish to obtain the latest code,
+you can <code>cd</code> into the appropriate directory and run <code>sudo git pull</code>. </p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/openeventdata">openeventdata</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
