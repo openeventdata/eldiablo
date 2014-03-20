@@ -34,13 +34,13 @@ computer within a computer. EL:DIABLO relies on [Vagrant](https://www.vagrantup.
 and by extension [VirtualBox](https://www.virtualbox.org/), to set up this
 virtual environment. These two pieces of software allow for the easy setup and
 use of a virtual machine. Thus, two of the files contained within EL:DIABLO are
-a `Vagrantfile`, which gives intructions to Vagrant on how to setup the virtual
+a `Vagrantfile`, which gives instructions to Vagrant on how to setup the virtual
 machine, and `bootstrap.sh`, which is a [shell script](https://en.wikipedia.org/wiki/Shell_script)
 that installs the necessary software within the virtual machine.
 
 The EL:DIABLO event coding platform is comprised of two primary applications:
 a web scraper and a processing pipeline ([`scraper`](https://github.com/openeventdata/scraper) and
-[`phoenix_pipeline`](https://github.com/openeventdata/phoenix_pipeline) specificaly). The scraper is a simple web scraper that
+[`phoenix_pipeline`](https://github.com/openeventdata/phoenix_pipeline) specifically). The scraper is a simple web scraper that
 makes use of a whitelist of RSS feeds to pull stories from popular news
 outlets. The pipeline moves the news stories from storage in a database to the
 event coder, such as TABARI or PETRARCH, and outputs event data. More
@@ -84,7 +84,7 @@ There are three methods for ending the Vagrant box: `vagrant suspend`, `vagrant 
 `vagrant destroy`. The main difference between these three is the amount of
 system resources used while in the "down" state. If you are completely done
 with the virtual machine, and do not wish to keep any of the data, make use of
-`vagrant destory`. Again, this *will remove* all of the data within the virtual
+`vagrant destroy`. Again, this *will remove* all of the data within the virtual
 machine and all software will have to be reinstalled. If you wish to just
 temporarily bring down the virtual machine, the other two commands should be
 explored in the [Vagrant documentation](https://docs.vagrantup.com/v2/getting-started/teardown.html).
@@ -96,7 +96,7 @@ every command with `sudo`.
 
 The `bootstrap.sh` script is specifically configured for use with the Vagrant
 box, but with slight modifications can be used on any Linux box (it's what we
-use to boostrap our machines). This means that the script can serve as the
+use to bootstrap our machines). This means that the script can serve as the
 basis for setting up a high-performance computer running EL:DIABLO, an
 individual's laptop, etc. 
 
