@@ -98,7 +98,7 @@ The `bootstrap.sh` script is specifically configured for use with the Vagrant
 box, but with slight modifications can be used on any Linux box (it's what we
 use to boostrap our machines). This means that the script can serve as the
 basis for setting up a high-performance computer running EL:DIABLO, an
-individuals laptop, etc. 
+individual's laptop, etc. 
 
 For the two Github repositories, `scraper` and `phoenix_pipeline`, each time
 `vagrant up` is run the most recent version of the code is pulled from Github.
