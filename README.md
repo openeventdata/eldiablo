@@ -103,4 +103,4 @@ For the two Github repositories, `scraper` and `phoenix_pipeline`, each time
 If you have a long-running virtual machine and wish to obtain the latest code,
 you can `cd` into the appropriate directory and run `sudo git pull`. 
 
-[git]: https://www.dropbox.com/s/qtjzdaqmnxhmz90/Screenshot_2014-03-20_15_35_43.png "Github example"
+[git]: http://i.imgur.com/YTT6Ppy.png "Github example"
