@@ -63,7 +63,7 @@ For those familiar with `git`, a `git clone` should work fine. For those
 unfamiliar with `git`, it is possible to download the repository as a zip file
 as shown in the picture below.
 
-{INSERT PICTURE}
+![Github][git]
 
 Once this file is downloaded and unzipped, you should the command line to cd into the
 directory and do `vagrant up`. This will take awhile to download the operating system image
@@ -102,3 +102,5 @@ For the two Github repositories, `scraper` and `phoenix_pipeline`, each time
 `vagrant up` is run the most recent version of the code is pulled from Github.
 If you have a long-running virtual machine and wish to obtain the latest code,
 you can `cd` into the appropriate directory and run `sudo git pull`. 
+
+[git]: https://www.dropbox.com/s/qtjzdaqmnxhmz90/Screenshot_2014-03-20_15_35_43.png "Github example"
