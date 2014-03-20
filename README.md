@@ -91,7 +91,7 @@ explored in the [Vagrant documentation](https://docs.vagrantup.com/v2/getting-st
 
 ##Other Information
 
-The way Vagrant sets up the virtual machine, it is necessary to prepend nearly
+Due to the way Vagrant sets up the virtual machine, it is necessary to prepend nearly
 every command with `sudo`.
 
 The `bootstrap.sh` script is specifically configured for use with the Vagrant
