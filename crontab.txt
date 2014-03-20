@@ -1,2 +1,2 @@
 @hourly cd /home/vagrant/scraper && /usr/bin/python /home/vagrant/scraper/scraper.py >> /home/vagrant/scraper_stdout.log 2>&1
-0 1 * * * cd /home/vagrant/phox_pipeline && /usr/bin/python /home/vagrant/phox_pipeline/phox_pipeline.py >> /home/vagrant/pipeline_stdout.log 2>&1
+0 1 * * * cd /home/vagrant/phoenix_pipeline && /usr/bin/python /home/vagrant/phoenix_pipeline/phox_pipeline.py >> /home/vagrant/pipeline_stdout.log 2>&1
