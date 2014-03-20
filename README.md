@@ -63,7 +63,7 @@ For those familiar with `git`, a `git clone` should work fine. For those
 unfamiliar with `git`, it is possible to download the repository as a zip file
 as shown in the picture below.
 
-![Github][git]
+[![Github][git]][git]
 
 Once this file is downloaded and unzipped, you should the command line to cd into the
 directory and do `vagrant up`. This will take awhile to download the operating system image
