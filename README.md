@@ -65,13 +65,15 @@ as shown in the picture below.
 
 [![Github][git]][git]
 
-Once this file is downloaded and unzipped, you should the command line to cd into the
+Once this file is downloaded and unzipped, you should use the command line to cd into the
 directory and do `vagrant up`. This will take awhile to download the operating system image
 (this will only be done once) and then install the relevant software within the virtual
 machine. Then `vagrant ssh` to get into the box. You're now in the virtual machine. Overall,
 this should look something like:
 
-{INSERT PICTURE}
+[![Shell][first]][first]
+
+[![Shell][second]][second]
 
 As a note, all of this will create a folder somewhere on your local machine
 that contains the operating system images. On OSX it's in the home directory and
@@ -104,3 +106,5 @@ If you have a long-running virtual machine and wish to obtain the latest code,
 you can `cd` into the appropriate directory and run `sudo git pull`. 
 
 [git]: http://i.imgur.com/YTT6Ppy.png "Github example"
+[first]: http://i.imgur.com/UJtjy3N.png "Terminal example"
+[second]: http://i.imgur.com/206UtDs.png "Second terminal example"
