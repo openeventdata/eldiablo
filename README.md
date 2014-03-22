@@ -68,8 +68,8 @@ as shown in the picture below.
 Once this file is downloaded and unzipped, you should use the command line to cd into the
 directory and do `vagrant up`. This will take awhile to download the operating system image
 (this will only be done once) and then install the relevant software within the virtual
-machine. Then `vagrant ssh` to get into the box. You're now in the virtual machine. Overall,
-this should look something like:
+machine. Seriously, this is going to take time; the process hasn't stalled out. Then `vagrant ssh`
+to get into the box. You're now in the virtual machine. Overall, this should look something like:
 
 [![Shell][first]][first]
 

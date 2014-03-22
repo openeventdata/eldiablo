@@ -15,6 +15,7 @@ EOF
 sudo apt-get install libncurses5-dev <<-EOF
 yes
 EOF
+sudo apt-get install make
 sudo apt-get install zip
 sudo apt-get install unzip
 sudo apt-get install libxml2-dev <<-EOF
@@ -41,16 +42,22 @@ sudo pip install -r phoenix_pipeline/requirements.txt
 echo "Download and compile TABARI..."
 wget http://eventdata.parusanalytics.com/tabari.dir/TABARI.0.8.4b2.make.dir.zip
 unzip TABARI.0.8.4b2.make.dir.zip
-cd TABARI.0.8.4b2.make.dir.zip
-make
+cd TABARI.0.8.4b2.make.dir/
+echo "Compiling TABARI..."
+sudo make
+sudo make
+echo "Moving TABARI to phoenix_pipeline..."
+sudo mv TABARI.0.8.4b2 ../phoenix_pipeline/
 cd
 
+
 echo "Downloading NLTK data..."
-mkdir -p nltk_data/tokenizers
+sudo mkdir -p nltk_data/tokenizers
 cd nltk_data/tokenizers
-wget http://nltk.github.com/nltk_data/packages/tokenizers/punkt.zip
+sudo wget http://www.nltk.org/nltk_data/packages/tokenizers/punkt.zip
 sudo unzip punkt.zip
 cd
+sudo mv nltk_data /usr/lib/nltk_data
 
 echo "Installing MongoDB..."
 sudo apt-get install mongodb-10gen
