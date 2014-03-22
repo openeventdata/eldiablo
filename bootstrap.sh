@@ -15,6 +15,7 @@ EOF
 sudo apt-get install libncurses5-dev <<-EOF
 yes
 EOF
+sudo apt-get install zip
 sudo apt-get install unzip
 sudo apt-get install libxml2-dev <<-EOF
 yes
