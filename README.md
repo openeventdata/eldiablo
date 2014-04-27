@@ -1,6 +1,3 @@
-EL:DIABLO
-=========
-
 [![Logo][logo]][logo]
 
 Event data in a box, basically.
