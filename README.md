@@ -1,6 +1,8 @@
 EL:DIABLO
 =========
 
+[![Logo][logo]][logo]
+
 Event data in a box, basically.
 
 ##About
@@ -108,3 +110,4 @@ you can `cd` into the appropriate directory and run `sudo git pull`.
 [git]: http://i.imgur.com/YTT6Ppy.png "Github example"
 [first]: http://i.imgur.com/UJtjy3N.png "Terminal example"
 [second]: http://i.imgur.com/206UtDs.png "Second terminal example"
+[logo]: https://i.imgur.com/3R7gtyr.png "EL:DIABLO logo"
