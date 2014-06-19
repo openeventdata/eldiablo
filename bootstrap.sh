@@ -12,10 +12,6 @@ EOF
 sudo apt-get install g++ <<-EOF
 yes
 EOF
-sudo apt-get install libncurses5-dev <<-EOF
-yes
-EOF
-sudo apt-get install make
 sudo apt-get install zip
 sudo apt-get install unzip
 sudo apt-get install libxml2-dev <<-EOF
@@ -34,20 +30,15 @@ EOF
 echo "Cloning Phoenix pipeline files..."
 sudo git clone https://github.com/openeventdata/phoenix_pipeline.git
 sudo git clone https://github.com/openeventdata/scraper.git
+sudo git clone https://github.com/openeventdata/stanford_pipeline.git
 
 echo "Installing Python dependencies..."
 sudo pip install -r scraper/requirements.txt
 sudo pip install -r phoenix_pipeline/requirements.txt
+sudo pip install -r stanford_pipeline/requirements.txt
 
-echo "Download and compile TABARI..."
-wget http://eventdata.parusanalytics.com/tabari.dir/TABARI.0.8.4b2.make.dir.zip
-unzip TABARI.0.8.4b2.make.dir.zip
-cd TABARI.0.8.4b2.make.dir/
-echo "Compiling TABARI..."
-sudo make
-sudo make
-echo "Moving TABARI to phoenix_pipeline..."
-sudo mv TABARI.0.8.4b2 ../phoenix_pipeline/
+echo "Installin PETRARCH..."
+sudo pip install git+https://github.com/openeventdata/petrarch.git
 cd
 
 
