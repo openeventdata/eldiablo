@@ -12,6 +12,9 @@ EOF
 sudo apt-get install g++ <<-EOF
 yes
 EOF
+sudo apt-get install default-jre <<-EOF
+yes
+EOF
 sudo apt-get install zip
 sudo apt-get install unzip
 sudo apt-get install libxml2-dev <<-EOF
@@ -37,10 +40,14 @@ sudo pip install -r scraper/requirements.txt
 sudo pip install -r phoenix_pipeline/requirements.txt
 sudo pip install -r stanford_pipeline/requirements.txt
 
-echo "Installin PETRARCH..."
+echo "Installing PETRARCH..."
 sudo pip install git+https://github.com/openeventdata/petrarch.git
 cd
 
+echo "Downloading CoreNLP..."
+sudo wget http://www-nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip
+sudo unzip stanford-corenlp-full-2013-06-20.zip
+mv stanford-corenlp-full-2013-06-20 /home/vagrant/stanford-corenlp
 
 echo "Downloading NLTK data..."
 sudo mkdir -p nltk_data/tokenizers
