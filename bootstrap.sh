@@ -3,6 +3,7 @@
 sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
 echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' |
 tee /etc/apt/sources.list.d/mongodb.list
+
 sudo apt-get update
 
 echo "Installing base packages..."
@@ -45,9 +46,12 @@ sudo pip install git+https://github.com/openeventdata/petrarch.git
 cd
 
 echo "Downloading CoreNLP..."
-sudo wget http://www-nlp.stanford.edu/software/stanford-corenlp-full-2013-06-20.zip
-sudo unzip stanford-corenlp-full-2013-06-20.zip
-mv stanford-corenlp-full-2013-06-20 /home/vagrant/stanford-corenlp
+sudo wget http://nlp.stanford.edu/software/stanford-corenlp-full-2014-06-16.zip
+sudo unzip stanford-corenlp-full-2014-06-16.zip
+mv stanford-corenlp-full-2014-06-16 /home/vagrant/stanford-corenlp
+cd /home/vagrant/stanford-corenlp
+echo "Downloading shift-reduce parser..."
+sudo wget http://nlp.stanford.edu/software/stanford-srparser-2014-07-01-models.jar
 
 echo "Downloading NLTK data..."
 sudo mkdir -p nltk_data/tokenizers
