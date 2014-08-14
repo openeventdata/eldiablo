@@ -7,6 +7,7 @@ tee /etc/apt/sources.list.d/mongodb.list
 sudo apt-get update
 
 echo "Installing base packages..."
+sudo apt-get install zlib1g-dev
 sudo apt-get install git <<-EOF
 yes
 EOF
