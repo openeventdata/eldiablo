@@ -62,6 +62,8 @@ For those familiar with `git`, a `git clone` should work fine. For those
 unfamiliar with `git`, it is possible to download the repository as a zip file
 as shown in the picture below.
 
+*Note: We've tested this setup on Vagrant 1.6.5*
+
 [![Github][git]][git]
 
 Once this file is downloaded and unzipped, you should use the command line to cd into the
@@ -93,11 +95,25 @@ explored in the [Vagrant documentation](https://docs.vagrantup.com/v2/getting-st
 Due to the way Vagrant sets up the virtual machine, it is necessary to prepend nearly
 every command with `sudo`.
 
+The filepaths in the config file for the `stanford_pipeline` need to be changed
+to use absolute paths. For example:
+
+```
+cd ~/stanford_pipeline
+sudo vim default_config.ini
+```
+
+Once in the config, change the `~/` characters to `/home/vagrant/`. 
+
 The `bootstrap.sh` script is specifically configured for use with the Vagrant
 box, but with slight modifications can be used on any Linux box (it's what we
 use to bootstrap our machines). This means that the script can serve as the
 basis for setting up a high-performance computer running EL:DIABLO, an
 individual's laptop, etc. 
+
+Currently the virtual machine takes up 4GB of RAM. Less than this doesn't
+really work since the shift-reduce parser needs a fair amount of memory to
+operate. 
 
 For the two Github repositories, `scraper` and `phoenix_pipeline`, each time
 `vagrant up` is run the most recent version of the code is pulled from Github.
