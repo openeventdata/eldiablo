@@ -111,9 +111,9 @@ use to bootstrap our machines). This means that the script can serve as the
 basis for setting up a high-performance computer running EL:DIABLO, an
 individual's laptop, etc. 
 
-Currently the virtual machine takes up 2GB of RAM. If the `stanford_pipeline`
-starts giving errors, especially errors from Java or CoreNLP, try modifying the
-`Vagrantfile` in the directory to have more memory. 
+Currently the virtual machine takes up 4GB of RAM. Less than this doesn't
+really work since the shift-reduce parser needs a fair amount of memory to
+operate. 
 
 For the two Github repositories, `scraper` and `phoenix_pipeline`, each time
 `vagrant up` is run the most recent version of the code is pulled from Github.
